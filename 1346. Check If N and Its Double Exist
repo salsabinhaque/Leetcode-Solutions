@@ -1,0 +1,14 @@
+class Solution(object):
+    def checkIfExist(self, arr):
+        
+        array=[]
+        for i in arr:
+            if 2*i in array or (i%2==0 and i//2 in array):
+                return(True)
+            array.append(i)
+        return(False)        
+
+          
+
+
+        
