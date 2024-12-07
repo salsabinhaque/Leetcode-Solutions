@@ -1,0 +1,13 @@
+class Solution(object):
+    def addSpaces(self, s, spaces):
+        new=[]
+        spaces_set=set(spaces)
+        for i, char in enumerate(s):
+            if i in spaces_set:
+                new.append(' ')
+            new.append(char)
+        return(''.join(new))
+
+
+
+        
