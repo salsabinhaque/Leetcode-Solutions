@@ -1,0 +1,22 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        if len(nums)==0:
+            return []
+        
+        threshold = len(nums) // 3
+        
+        freq = {}
+
+
+        for i in nums:
+            if i in freq:
+                freq[i] += 1
+            else:
+                freq[i] = 1
+
+        output = []
+        for j in freq:
+            if freq[j] > threshold:
+                output.append(j)
+
+        return output
