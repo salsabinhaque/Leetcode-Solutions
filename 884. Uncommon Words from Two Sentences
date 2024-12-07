@@ -1,0 +1,25 @@
+class Solution(object):
+    def uncommonFromSentences(self, s1, s2):
+        a1=s1.split(' ')
+        b1=s2.split(' ')
+        s={}
+
+        for i in a1:
+            if i in s:
+                s[i]+=1
+            else:
+                s[i]=1
+      
+        for i in b1:
+            if i in s:
+                s[i]+=1
+            else:
+                s[i]=1    
+        
+
+        output=[]
+        for j in s:
+            if s[j]==1:
+                output.append(j)
+        
+        return(output)
