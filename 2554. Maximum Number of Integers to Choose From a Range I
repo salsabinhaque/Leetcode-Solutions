@@ -1,0 +1,25 @@
+
+class Solution(object):
+    def maxCount(self, banned, n, maxSum):
+        valid_numbers = []  
+        count = 0 
+        maxS = 0  
+        banned_set = set(banned) 
+        
+       
+        for x in range(1, n + 1):
+            if x not in banned_set: 
+                valid_numbers.append(x)
+        
+        
+        valid_numbers.sort()
+        
+       
+        for num in valid_numbers:
+            if maxS + num <= maxSum:
+                count += 1
+                maxS += num
+            else:
+                break  
+
+        return count
