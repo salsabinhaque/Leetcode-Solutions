@@ -1,0 +1,21 @@
+class Solution:
+    def minimumSize(self, nums: List[int], maxOperations: int) -> int:
+        def minimum_val(n):
+            operation = 0
+            for i in nums:
+                operation += ceil(i/n)-1
+                if operation>maxOperations:
+                    return False
+            return True
+
+
+        l,r=1,max(nums)
+        while l<r:
+            mid=((l+r)//2)
+            if minimum_val(mid):
+                r=mid
+            else:
+                l=mid+1
+        return(l)            
+                      
+        
